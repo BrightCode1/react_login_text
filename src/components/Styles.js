@@ -71,9 +71,10 @@ export const StyledInput = styled.input`
   padding-left: 50px;
   font-size: 17px;
   letter-spacing: 1px;
-  color: ${colors.light2};
+  color: ${colors.dark1};
   border: 0;
   outline: none;
+  border-radius: 7px;
   display: block;
   margin: 5px auto 10px auto;
   transition: 0.3s ease-in-out;
@@ -82,6 +83,12 @@ export const StyledInput = styled.input`
   &:focus {
     background-color: ${colors.dark2};
     color: ${colors.primary};
+  }
+
+  &::placeholder {
+    font-size: 15px;
+    font-weight: 600;
+    color: ${colors.light2};
   }
 `;
 
@@ -107,6 +114,7 @@ export const StyledFormButton = styled.button`
   color: ${colors.theme};
   transition: 0.3s ease-in-out;
   font-weight: 600;
+  outline: none;
 
   &:hover {
     background-color: ${colors.theme};
@@ -122,4 +130,32 @@ export const StyledIcons = styled.p`
   top: 35px;
   ${(props) => props.right && `right: 15px;`}
   ${(props) => !props.right && `left: 15px;`}
+`;
+
+export const ErrorMessage = styled.p`
+  color: ${colors.red};
+  font-size: 11px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: left;
+`;
+
+export const ExtraText = styled.p`
+  font-size: ${(props) => props.size}px;
+  text-align: center;
+  color: ${(props) => (props.color ? props.color : colors.dark2)};
+  padding: 2px;
+  margin-top: 10px;
+`;
+
+export const TextLink = styled(Link)`
+  text-decoration: none;
+  color: ${colors.theme};
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
